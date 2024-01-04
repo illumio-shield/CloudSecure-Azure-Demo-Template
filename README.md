@@ -37,4 +37,8 @@ Or
 		az group delete --name trial --yes --no-wait
 
 6. The Bicep template includes a "CustomData" field which is a base64 encoded string that includes a set of bash scripts that load cronjob entries to simulate some basic traffic flows. This can be edited to your needs.
-   
+
+In our scenario, we have defined 3 subnets (prod, dev, and staging) in a single virtual network. Within each subnet we have created 3-tier applications using Virtual Machines. Some of the VM's have been loaded with a few cron job entries to generate simple traffic flows.
+
+![image](https://github.com/stauffer-jeff/CloudSecure-Azure-Demo-Template/assets/155683658/49549934-9798-4d3d-9eff-1801449c39f2)
+
