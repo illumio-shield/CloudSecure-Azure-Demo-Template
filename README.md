@@ -13,26 +13,32 @@ To run this Azure Bicep template:
 1. Open an Azure Cloud Shell window in Azure portal, or your local system if you have it installed. Commands for both PowerShell and Bash (Azure CLI) are listed below.
 2. Create a Resource Group you'd like to launch this template from ('trial' in this example), and assign it a region of your choice.
 
+PowerShell:
+
 		New-AzResourceGroup -Name trial -Location eastus2
 
-Or
+Azure CLI:
 
 		az group create --name trial --location eastus2
 
 3. Launch the Bicep template. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
 
+PowerShell:
+
 		New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName trial -TemplateFile CloudSecure.bicep
 
-Or
+Azure CLI:
 
 		az deployment group create --name deploy1 --resource-group trial --template-file CloudSecure.bicep
 
 4. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
 5. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
 
+PowerShell:
+
 		Remove-AzResourceGroup -Name trial
 
-Or 
+Azure CLI:
 
 		az group delete --name trial --yes --no-wait
 
