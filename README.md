@@ -44,7 +44,7 @@ Azure CLI:
 
 6. The Bicep template includes a "CustomData" field which is a base64 encoded string that includes a set of bash scripts that load cronjob entries to simulate some basic traffic flows. This can be edited to your needs.
 
-7. In order for CloudSecure to capture traffic flow logs, you will need to enable NSG flow logs on these VM's and send logs to a storage account of your choice. General Purpose V2 account is fine.
+7. In order for CloudSecure to capture traffic flow logs, you will need to enable NSG flow logs on these VM's and send logs to a storage account of your choice. Standard general purpose V2 storage is fine.
 
 In our scenario, we have defined 3 environments (prod, dev, and staging) in a single virtual network using 3 subnets. Within each subnet we have created 3-tier applications using Virtual Machines. Some of the VM's have been loaded with a few cron job entries to generate simple traffic flows.
 
