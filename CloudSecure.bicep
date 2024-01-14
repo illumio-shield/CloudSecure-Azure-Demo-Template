@@ -20,6 +20,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '1234'
     role: 'web'
+    Compliance: 'PCI'
   }
   {
     namePrefix: 'Ticketing-Prod-Web6'
@@ -31,6 +32,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '1234'
     role: 'web'
+    Compliance: 'PCI'
   }
   {
     namePrefix: 'Ticketing-Prod-Proc5'
@@ -42,6 +44,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '1234'
     role: 'proc'
+    Compliance: 'PCI'
   }
   {
     namePrefix: 'Ticketing-Prod-DB5'
@@ -53,6 +56,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '1234'
     role: 'db'
+    Compliance: 'PCI'
   } 
   {
     namePrefix: 'Ticketing-Prod-DB6'
@@ -64,6 +68,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '1234'
     role: 'db'
+    Compliance: 'PCI'
   } 
   {
     namePrefix: 'Ticketing-Dev-Web5'
@@ -75,6 +80,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '5555'
     role: 'web'
+    Compliance: 'none'
   }
   {
     namePrefix: 'Ticketing-Dev-Proc5'
@@ -86,6 +92,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '5555'
     role: 'proc'
+    Compliance: 'none'
   }
   {
     namePrefix: 'Ticketing-Dev-DB5'
@@ -97,6 +104,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '5555'
     role: 'db'
+    Compliance: 'none'
   }
   {
     namePrefix: 'Ticketing-Staging-Web5'
@@ -108,6 +116,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '6789'
     role: 'web'
+    Compliance: 'none'
   }
   {
     namePrefix: 'Ticketing-Staging-Proc5'
@@ -119,6 +128,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '6789'
     role: 'proc'
+    Compliance: 'none'
   }
   {
     namePrefix: 'Ticketing-Staging-DB5'
@@ -130,6 +140,7 @@ var vmNames = [
     app: 'Ticketing'
     BizUnit: '6789'
     role: 'db'
+    Compliance: 'none'
   }
 ]
 
@@ -147,6 +158,7 @@ resource vmName_resource 'Microsoft.Compute/virtualMachines@2020-06-01' = [for (
     App:vmName.app
     Biz:vmName.BizUnit
     Role:vmName.role
+    Compliance:vmName.Compliance
   }
   properties: {
     osProfile: {
