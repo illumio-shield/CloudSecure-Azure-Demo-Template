@@ -31,8 +31,9 @@ Azure CLI:
 
 		az deployment group create --name deploy1 --resource-group trial --template-file CloudSecure.bicep
 
-4. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
-5. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
+4. You will be prompted for a username and password for the virtual machines. (Azure will require a mix of upper/lower/numbers/chars)
+5. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
+6. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
 
 PowerShell:
 
