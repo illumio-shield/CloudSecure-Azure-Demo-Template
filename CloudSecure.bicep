@@ -1,9 +1,9 @@
 @description('VM size')
 param vmSize string = 'Standard_B1s'
 param location string = resourceGroup().location
-param adminUsername string = 'trialuser'
+param adminUsername string
 @secure()
-param adminPassword string = 'test1234!!'
+param adminPassword string
 
 @description('Virtual network name')
 param vnetName string = 'trial-vnet1'
