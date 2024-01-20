@@ -21,7 +21,7 @@ Azure CLI:
 
 		az group create --name trial --location eastus2
 
-3. Launch the Bicep template. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
+3. Upload the Bicep template to your CloudShell window. Launch the Bicep template. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
 
 PowerShell:
 
