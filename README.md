@@ -8,6 +8,18 @@ The primary goal of this project is to demonstrate how Illumio Cloudsecure can b
 
 Microsegmentation is a critical aspect of modern network security, and Illumio provides robust solutions for Microsegmentation. This demo simulation serves as a realistic, intentionally vulnerable application that users can use alongside Illumio Cloudsecure to witness firsthand how microsegmentation enhances security.
 
+## Prerequisites (if you're new to Azure)
+
+You will need to enable “Microsoft Insights” before NSG flow logs can be enabled. You can do this by: 
+
+- Click on your Subscription Name 
+- Scroll down on left panel to “Resource Providers” near the bottom 
+- There will be an entry called “microsoft.insights”. Click on it then click on the Register button up top. 
+
+If this is your first time using the Azure portal, there are some prerequisites that you’ll need to perform first to utilize Azure Cloud Shell: 
+
+	https://learn.microsoft.com/en-us/azure/cloud-shell/get-started?tabs=azurecli 
+
 To run this Azure Bicep template:
 
 1. Open an Azure Cloud Shell window in Azure portal, or your local system if you have it installed. Commands for both PowerShell and Bash (Azure CLI) are listed below.
