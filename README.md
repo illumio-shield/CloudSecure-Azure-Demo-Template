@@ -53,7 +53,7 @@ Azure CLI:
    - Click on the name of the Network Security Group (located somewhat in the center of the screen)
    - Click on NSG Flow Logs from the left panel
    - Click on the "+ Create" button
-   - Click on the "+ Select Resource" button. You'll be able to enable flow logs for all your VMs at once by selecting each VM on this screen.
+   - Click on the "+ Select Resource" button. You'll be able to enable flow logs for all your NSGs at once by selecting each NSG on this screen.
    - Once all selected, then click on "Create New Storage Account" if you want to create a new storage site for these flow. Otherwise, select existing.
    - Give the storage a name, and select the "Account kind" option of StorageV2. Click OK
    - Click Review + Create to complete this process.
