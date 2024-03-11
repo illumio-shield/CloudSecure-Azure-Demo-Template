@@ -20,6 +20,8 @@ If this is your first time using the Azure portal, there are some prerequisites 
 
 	https://learn.microsoft.com/en-us/azure/cloud-shell/get-started?tabs=azurecli 
 
+NOTE: Part of setting up CLI prompt access is creating storage - make sure you select your own subscription. For some people it's defaulting to the parent level. (i.e. sales vs. se-46)
+
 To run this Azure Bicep template:
 
 1. Open an Azure Cloud Shell window in Azure portal, or your local system if you have it installed. Commands for both PowerShell and Bash (Azure CLI) are listed below.
