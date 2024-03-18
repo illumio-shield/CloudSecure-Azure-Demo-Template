@@ -35,31 +35,20 @@ Azure CLI:
 
 		az group create --name trial --location eastus2
 
-3. Use the "Upload" button to transfer the Bicep template to your CloudShell window. Launch the Bicep template using the command below. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
+3. Use the "Upload" button to transfer the two Bicep files (main.bicep and flowlogs.bicep) to your CloudShell window. Launch the Bicep template using the command below. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
 
 PowerShell:
 
-		New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName trial -TemplateFile CloudSecure.bicep
+		New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName trial -TemplateFile main.bicep
 
 Azure CLI:
 
-		az deployment group create --name deploy1 --resource-group trial --template-file CloudSecure.bicep
+		az deployment group create --name deploy1 --resource-group trial --template-file main.bicep
 
 4. You will be prompted for a username and password for the virtual machines. (Azure will require a mix of upper/lower/numbers/chars. Don't choose something like 'admin' or 'root' or it will fail)
 5. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
 6. The Bicep template includes a "CustomData" field which is a base64 encoded string that includes a set of bash scripts that load cronjob entries to simulate some basic traffic flows. This can be edited to your needs.
-
-7. In order for CloudSecure to capture traffic flow logs, you will need to enable NSG flow logs on these VM's and send logs to a storage account of your choice. Standard general purpose V2 storage is fine. In order to create NSG flow logs:
-   - Click on any one of the Virtual Machines just created.
-   - Click on Networking from the left panel
-   - Click on the name of the Network Security Group (located somewhat in the center of the screen)
-   - Click on NSG Flow Logs from the left panel
-   - Click on the "+ Create" button
-   - Click on the "+ Select Resource" button. You'll be able to enable flow logs for all your NSGs at once by selecting each NSG on this screen.
-   - Once all selected, then click on "Create New Storage Account" if you want to create a new storage site for these flow. Otherwise, select existing.
-   - Give the storage a name, and select the "Account kind" option of StorageV2. Click OK
-   - Click Review + Create to complete this process.
-9. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
+7. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
 
 PowerShell:
 
