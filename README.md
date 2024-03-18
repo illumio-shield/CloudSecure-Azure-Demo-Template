@@ -59,7 +59,7 @@ Azure CLI:
 		az group delete --name trial --yes --no-wait
 
 
-In our scenario, we have defined 3 environments (prod, dev, and staging) in a single virtual network using 3 subnets. Within each subnet we have created 3-tier applications using Virtual Machines. Some of the VM's have been loaded with a few cron job entries to generate simple traffic flows.
+In our scenario, we have defined 3 environments (prod, dev, and staging) in two virtual networks using 3 subnets, with vnet peering established between the vnets. Within each subnet we have created 3-tier applications using Virtual Machines. Some of the VM's have been loaded with a few cron job entries to generate simple traffic flows.
 
 ![image](https://github.com/stauffer-jeff/CloudSecure-Azure-Demo-Template/assets/155683658/49549934-9798-4d3d-9eff-1801449c39f2)
 
