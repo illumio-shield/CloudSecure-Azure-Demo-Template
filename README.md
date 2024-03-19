@@ -47,9 +47,15 @@ Azure CLI:
 		az deployment group create --name deploy1 --resource-group trial --template-file main.bicep
 
 5. You will be prompted for a username and password for the virtual machines. (Azure will require a mix of upper/lower/numbers/chars. Don't choose something like 'admin' or 'root' or it will fail)
-6. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
-7. The Bicep template includes a "CustomData" field which is a base64 encoded string that includes a set of bash scripts that load cronjob entries to simulate some basic traffic flows. This can be edited to your needs.
-8. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
+
+	NOTE: If the deployment fails due to "NetworkWatcher not found" it is most likely due to this being a brand new Azure subscription. You can fix by creating one:
+      
+		PowerShell:      New-AzResourceGroup -Name 'NetworkWatcherRG' -Location 'eastus'   
+		Azure CLI:       az group create --name 'NetworkWatcherRG' --location 'eastus'   
+   
+7. Wait a few minutes. You can follow the progress of the deploymet from the Azure portal by going to 'Deployments' tab of the Resource Group. You will see it progress through creating NSG's, NIC's, virtual networks, virtual machines, and lastly the 'Run' commands for linux scripting on each host.
+8. The Bicep template includes a "CustomData" field which is a base64 encoded string that includes a set of bash scripts that load cronjob entries to simulate some basic traffic flows. This can be edited to your needs.
+9. When you are done using this environment, simply delete the Resource Group. All associated resources that were generated will be removed:
 
 PowerShell:
 
