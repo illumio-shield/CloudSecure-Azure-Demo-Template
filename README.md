@@ -20,7 +20,17 @@ If this is your first time using the Azure portal, there are some prerequisites 
 
 	https://learn.microsoft.com/en-us/azure/cloud-shell/get-started?tabs=azurecli 
 
-NOTE: Part of setting up CLI prompt access is creating storage - make sure you select your own subscription. For some people it's defaulting to the parent level. (i.e. sales vs. se-46)
+NOTE: Part of setting up CLI prompt access is creating storage - make sure you select your own subscription. For some people it's defaulting to the parent level. (i.e. sales vs. se-46). Check your subscription context via the command below, and change if needed:
+
+PowerShell:
+
+		Get-AzContext
+  		Set-AzContext -Subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
+
+Azure CLI:
+
+		az account list --output table
+  		az account set --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
 
 To run this Azure Bicep template:
 
