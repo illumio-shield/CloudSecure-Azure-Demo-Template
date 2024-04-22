@@ -46,7 +46,7 @@ Azure CLI:
 		az group create --name trial --location eastus2
 
 3. Use the "Upload" button to transfer the two Bicep files (main.bicep and flowlogs.bicep) to your CloudShell window. (NOTE: upload one file at a time... Azure doesn't seem to like selecting both at once)
-4. Launch the Bicep template using the command below. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template.
+4. Launch the Bicep template using the command below. Give it a deployment name ('deploy1' in this example), reference the Resource Group just created, and the template. (You don't need to reference the flowlogs.bicep file, it's accessed via main.bicep)
 
 PowerShell:
 
